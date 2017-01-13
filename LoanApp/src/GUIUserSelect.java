@@ -11,6 +11,7 @@
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 
 public class GUIUserSelect {
 
@@ -66,7 +67,17 @@ public class GUIUserSelect {
 	   Add the ActionListeners for OK Button and the Close Button
 	*/
 	private void addActionListeners() {
-	
+		buttonUserSelectOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Ok button pressed");
+			}
+		});
+
+		buttonUserSelectClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Close button pressed");
+			}
+		});	
 	}
 
 	/*
