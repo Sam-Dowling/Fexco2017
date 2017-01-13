@@ -2,7 +2,7 @@
 public class ProbabilityChecker {
     private int score = 0;
 
-    private void TotalCost(Account account){
+    public ProbabilityChecker(Account account) {
         this.BalanceScore(account.getBalance());
         this.EmploymentScore(account.isEmployed());
         this.CreditHistoryScore(account.getCreditHistory());
@@ -24,7 +24,7 @@ public class ProbabilityChecker {
     }
 
     public int getScore(){
-        return this.score;
+        return (this.score <= 100) ? this.score : 100;
     }
 
 }

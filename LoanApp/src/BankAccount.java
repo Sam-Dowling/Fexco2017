@@ -11,17 +11,17 @@ public class BankAccount implements Account{
         this.employed = employed;
     }
 
-    @Override
+
     public float getBalance() {
         return balance;
     }
 
-    @Override
+
     public boolean isEmployed() {
         return employed;
     }
 
-    @Override
+
     public float getCreditHistory() {
         return creditHistory;
     }
