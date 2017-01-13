@@ -44,11 +44,15 @@ public class GUIUserSelect {
 		FlowLayout flow 	= new FlowLayout();
 		panelFlow		= new JPanel(flow);
 		labelUserSelect		= new JLabel("Select a sample user to log in as");
+		labelUserSelect		.setFont(new Font("Serif", Font.BOLD, 18));
 		String [] userList	= {"Mary", "Tom", "Joe"};
 		comboBoxUserSelect	= new JComboBox<>(userList);
 		comboBoxUserSelect	.setSelectedIndex(0);
+		comboBoxUserSelect	.setFont(new Font("Serif", Font.BOLD, 24));
 		buttonUserSelectOK	= new JButton("ok");
+		buttonUserSelectOK	.setFont(new Font("Serif", Font.BOLD, 18));
 		buttonUserSelectClose	= new JButton("close");	
+		buttonUserSelectClose	.setFont(new Font("Serif", Font.BOLD, 18));
 	}
 
 	/*
