@@ -54,7 +54,12 @@ public class GUIUserSelect {
 	   Add Components to the correct layouts and add the layouts to the Frame
 	*/
 	private void addComponents() {
-	
+		panelBox	.add(labelUserSelect);
+		panelBox	.add(comboBoxUserSelect);
+		panelFlow	.add(buttonUserSelectOK);
+		panelFlow	.add(buttonUserSelectClose);
+		panelBox	.add(panelFlow);
+		frameUserSelect	.add(panelBox);	
 	}
 
 	/*
@@ -67,14 +72,17 @@ public class GUIUserSelect {
 	/*
 	   Allow other classes to open this gui
 	*/
-	public static void setFrameVisible() {
-	
+	public static void setFrameVisible(int width, int height) {
+		frameUserSelect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameUserSelect.setSize(width, height);
+		frameUserSelect.setVisible(true);
 	}
 
 	/*
 	   Allows other classes to close this gui
 	*/
 	public static void closeFrame() {
-	
+		frameUserSelect.setVisible(false);
+		frameUserSelect.dispose();
 	}
 }
