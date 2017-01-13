@@ -17,7 +17,7 @@ public class GUIUserSelect {
 	private static JFrame frameUserSelect;
 	private static JPanel panelBox, panelFlow;
 	private static JLabel labelUserSelect;
-	private static JComboBox comboBoxUserSelect;
+	private static JComboBox<String> comboBoxUserSelect;
 	private static JButton buttonUserSelectOK, buttonUserSelectClose;
 
 	// This creates a single instance of GUIUserSelect class
@@ -37,7 +37,17 @@ public class GUIUserSelect {
 	   Initialize Components and give their default values
 	*/
 	private void createComponents() {
-	
+		frameUserSelect		= new JFrame("Select User");
+		panelBox 		= new JPanel();
+		panelBox		.setLayout(new BoxLayout(panelBox, BoxLayout.Y_AXIS));
+		FlowLayout flow 	= new FlowLayout();
+		panelFlow		= new JPanel(flow);
+		labelUserSelect		= new JLabel("Select a sample user to log in as");
+		String [] userList	= {"Mary", "Tom", "Joe"};
+		comboBoxUserSelect	= new JComboBox<>(userList);
+		comboBoxUserSelect	.setSelectedIndex(0);
+		buttonUserSelectOK	= new JButton("ok");
+		buttonUserSelectClose	= new JButton("close");	
 	}
 
 	/*
