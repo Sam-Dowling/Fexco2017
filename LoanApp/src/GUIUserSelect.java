@@ -9,7 +9,16 @@
  *			JButton : buttonUserSelectClose
  */
 
+import java.awt.*;
+import javax.swing.*;
+
 public class GUIUserSelect {
+
+	private static JFrame frameUserSelect;
+	private static JPanel panelBox, panelFlow;
+	private static JLabel labelUserSelect;
+	private static JComboBox comboBoxUserSelect;
+	private static JButton buttonUserSelectOK, buttonUserSelectClose;
 
 	// This creates a single instance of GUIUserSelect class
 	private static GUIUserSelect gui = new GUIUserSelect();
