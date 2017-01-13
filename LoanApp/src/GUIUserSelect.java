@@ -45,7 +45,7 @@ public class GUIUserSelect {
 		panelFlow		= new JPanel(flow);
 		labelUserSelect		= new JLabel("Select a sample user to log in as");
 		labelUserSelect		.setFont(new Font("Serif", Font.BOLD, 18));
-		String [] userList	= {"Mary", "Tom", "Joe"};
+		String [] userList	= {"Sam", "Luke", "Johnjoe"};
 		comboBoxUserSelect	= new JComboBox<>(userList);
 		comboBoxUserSelect	.setSelectedIndex(0);
 		comboBoxUserSelect	.setFont(new Font("Serif", Font.BOLD, 24));
@@ -79,7 +79,7 @@ public class GUIUserSelect {
 
 		buttonUserSelectClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Close button pressed");
+				closeFrame();
 			}
 		});	
 	}
@@ -88,7 +88,7 @@ public class GUIUserSelect {
 	   Allow other classes to open this gui
 	*/
 	public static void setFrameVisible(int width, int height) {
-		frameUserSelect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameUserSelect.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frameUserSelect.setSize(width, height);
 		frameUserSelect.setVisible(true);
 	}
