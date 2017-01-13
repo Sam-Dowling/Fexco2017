@@ -9,9 +9,9 @@ public class ProbabilityChecker {
     }
 
     private void BalanceScore(float balance){ // 0 - 25%
-        // maps balance from 0 - 100,000 over 0 - 25
-        // eg balance 45,000 will give 11.25% / 25%
-        this.score += Math.round(balance * 25 / 100000);
+        // maps balance from 0 - 80,000 over 0 - 25
+        // eg balance 45,000 will give 14% / 25%
+        this.score += Math.round(balance * 25 / 80000);
     }
 
     private void EmploymentScore(boolean employed){ // 0-25%
