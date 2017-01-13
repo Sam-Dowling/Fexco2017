@@ -73,7 +73,9 @@ public class GUIUserSelect {
 	private void addActionListeners() {
 		buttonUserSelectOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Ok button pressed");
+				GUILoanChecker.getInstance();
+				GUILoanChecker.setBankAccount(comboBoxUserSelect.getSelectedItem().toString());
+				GUILoanChecker.setFrameVisible(500, 300);
 			}
 		});
 

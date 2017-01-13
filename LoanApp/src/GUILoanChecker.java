@@ -24,6 +24,8 @@ public class GUILoanChecker {
 	private static JTextField textFieldLoanCheckerAmount;
 	private static JButton buttonLoanCheckerOK, buttonLoanCheckerCancel;
 
+	private static BankAccount ba;
+
 	// This creates a single instance of GUIUserSelect class
 	private static GUILoanChecker gui = new GUILoanChecker();
 
@@ -79,13 +81,14 @@ public class GUILoanChecker {
 	private void addActionListeners() {
 		buttonLoanCheckerOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Ok button pressed");
+				ProbabilityChecker pc = new ProbabilityChecker(ba);
+				JOptionPane.showMessageDialog(null, "Score: " + pc.getScore());
 			}
 		});
 
 		buttonLoanCheckerCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Cancel button pressed");
+				closeFrame();
 			}
 		});	
 	}
@@ -105,5 +108,19 @@ public class GUILoanChecker {
 	public static void closeFrame() {
 		frameLoanChecker.setVisible(false);
 		frameLoanChecker.dispose();
+	}
+
+	public static void setBankAccount(String name) {
+		switch(name) {
+			case "Sam" :
+				ba = new BankAccount("Sam", 80000, .8f, true);
+				break;
+			case "Luke" :
+				ba = new BankAccount("Luke", 50000, .6f, true);
+				break;
+			case "Johnjoe" :
+				ba = new BankAccount("Johnjoe", 7000, .2f, false);
+				break;
+		}
 	}
 }
