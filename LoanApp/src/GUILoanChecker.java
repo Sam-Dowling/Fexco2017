@@ -81,8 +81,8 @@ public class GUILoanChecker {
 	private void addActionListeners() {
 		buttonLoanCheckerOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ProbabilityChecker pc = new ProbabilityChecker(ba);
-				JOptionPane.showMessageDialog(null, "Score: " + pc.getScore());
+				float amountEntered = Float.parseFloat(textFieldLoanCheckerAmount.getText());
+				JOptionPane.showMessageDialog(null, "Total repayment amount: " + ba.calculateLoanAmount(amountEntered));
 			}
 		});
 
@@ -97,7 +97,7 @@ public class GUILoanChecker {
 	   Allow other classes to open this gui
 	*/
 	public static void setFrameVisible(int width, int height) {
-		frameLoanChecker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameLoanChecker.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frameLoanChecker.setSize(width, height);
 		frameLoanChecker.setVisible(true);
 	}
