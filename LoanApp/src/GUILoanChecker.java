@@ -83,7 +83,14 @@ public class GUILoanChecker {
 			public void actionPerformed(ActionEvent e) {
 				float amountEntered = Float.parseFloat(textFieldLoanCheckerAmount.getText());
 				JOptionPane.showMessageDialog(null,
-                        "Total repayment amount: " + ba.calculateLoanAmount(amountEntered, comboBoxLoanCheckerType.getSelectedItem().toString()));
+						"Name: "+ba.getName() + "\n" +
+								"Balance: €" + ba.getBalance() + "\n" +
+								"Score: " + ba.getScore() + "%\n" +
+								"Loan Amount: €" + amountEntered + "\n\n" +
+								"Total repayment amount: €" + ba.calculateLoanAmount(amountEntered, comboBoxLoanCheckerType.getSelectedItem().toString()),
+						"Loan Report",
+						JOptionPane.INFORMATION_MESSAGE
+				);
 			}
 		});
 

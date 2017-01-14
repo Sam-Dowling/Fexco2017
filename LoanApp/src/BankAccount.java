@@ -36,16 +36,20 @@ public class BankAccount implements Account{
 
 
     public float getBalance() {
-        return balance;
+        return this.balance;
     }
 
 
     public boolean isEmployed() {
-        return employed;
+        return this.employed;
     }
 
 
     public float getCreditHistory() {
-        return creditHistory;
+        return this.creditHistory;
+    }
+
+    public String getName(){
+        return this.name;
     }
 }
