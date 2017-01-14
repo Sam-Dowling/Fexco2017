@@ -13,7 +13,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class GUIUserSelect {
+class GUIUserSelect {
 
 	private static JFrame frameUserSelect;
 	private static JPanel panelBox, panelFlow;
@@ -30,9 +30,6 @@ public class GUIUserSelect {
 		addComponents();
 		addActionListeners();
 	}
-
-	// This returns the only instance of this class to be created
-	public static GUIUserSelect getInstance() { return gui; }
 
 	/*
 	   Initialize Components and give their default values
@@ -73,7 +70,6 @@ public class GUIUserSelect {
 	private void addActionListeners() {
 		buttonUserSelectOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUILoanChecker.getInstance();
 				GUILoanChecker.setBankAccount(comboBoxUserSelect.getSelectedItem().toString());
 				GUILoanChecker.setFrameVisible(500, 300);
 			}
@@ -89,7 +85,7 @@ public class GUIUserSelect {
 	/*
 	   Allow other classes to open this gui
 	*/
-	public static void setFrameVisible(int width, int height) {
+	static void setFrameVisible(int width, int height) {
 		frameUserSelect.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frameUserSelect.setSize(width, height);
 		frameUserSelect.setVisible(true);
@@ -98,7 +94,7 @@ public class GUIUserSelect {
 	/*
 	   Allows other classes to close this gui
 	*/
-	public static void closeFrame() {
+	private static void closeFrame() {
 		frameUserSelect.setVisible(false);
 		frameUserSelect.dispose();
 	}
