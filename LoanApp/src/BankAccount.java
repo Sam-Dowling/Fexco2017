@@ -13,8 +13,20 @@ public class BankAccount implements Account{
         this.loanProbability = new ProbabilityChecker(this);
     }
 
-    public float calculateLoanAmount(float loanAmount){
-        return this.loanProbability.loanCost(loanAmount);
+    float calculateLoanAmount(float loanAmount, String loanType){
+        float loanTypefactor = 1;
+        switch(loanType){
+            case "Car Loan":
+                loanTypefactor = 1.05f;
+                break;
+            case "Mortgage":
+                loanTypefactor = 1.20f;
+                break;
+            case "Business Loan":
+                loanTypefactor = 1.10f;
+                break;
+        }
+        return this.loanProbability.loanCost(loanAmount) * loanTypefactor;
     }
 
     public int getScore(){
